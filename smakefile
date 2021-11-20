@@ -1,0 +1,12 @@
+CFLAGS =  debug=s opt opttime stackextend
+#CFLAGS = debug=s opt optpeep optsched opttime stackextend cpu=68030 math=ffp 
+
+OBJS = c2p.o
+
+all: Intro
+
+Intro: Intro.c
+		 sc link smallcode nocheckabort stripdebug $(CFLAGS) $@ $(OBJS)
+
+clean:
+		-delete \#?.(o|lnk)

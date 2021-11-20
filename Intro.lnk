@@ -1,0 +1,9 @@
+FROM LIB:c.o "Intro.o"+"c2p.o"
+TO "Intro"
+LIB LIB:scmffp.lib
+    LIB:scnb.lib LIB:amiga.lib
+ADDSYM
+SMALLCODE
+STRIPDEBUG
+DEFINE @__chkabort=@__dummy
+
